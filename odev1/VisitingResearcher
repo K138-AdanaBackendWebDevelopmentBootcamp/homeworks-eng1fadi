@@ -1,0 +1,39 @@
+import java.util.Objects;
+
+public class VisitingResearcher extends  Instructor{
+    private double hSalary;
+
+    public VisitingResearcher(String name, String address, String phoneNo) {
+        super(name, address, phoneNo);
+    }
+
+    public double gethSalary() {
+        return hSalary;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        VisitingResearcher that = (VisitingResearcher) o;
+        return Double.compare(that.hSalary, hSalary) == 0;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), hSalary);
+    }
+
+    public void sethSalary(double hSalary) {
+        this.hSalary = hSalary;
+    }
+
+    @Override
+    public String toString() {
+        return "VisitingResearcher{" +
+                "hSalary=" + hSalary +
+                '}';
+    }
+
+}
