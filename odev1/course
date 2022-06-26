@@ -1,0 +1,68 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+
+public class Course {
+    private String cname;
+    private String ccode;
+    private double cScore;
+
+    public Course() {
+    }
+
+    public Course(String cname, String ccode, double cScore) {
+        this.cname = cname;
+        this.ccode = ccode;
+        this.cScore = cScore;
+    }
+    private List<Student> studentList=new ArrayList<>();
+    public List<Student> getStudentList() {return studentList; }
+    private Instructor instructo;
+
+
+    public String getCname() {
+        return cname;
+    }
+
+    public void setCname(String cname) {
+        this.cname = cname;
+    }
+
+    public String getCcode() {
+        return ccode;
+    }
+
+    public void setCcode(String ccode) {
+        this.ccode = ccode;
+    }
+
+    public double getcScore() {
+        return cScore;
+    }
+
+    public void setcScore(double cScore) {
+        this.cScore = cScore;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Course course = (Course) o;
+        return ccode.equals(course.ccode);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(ccode);
+    }
+
+    @Override
+    public String toString() {
+        return "Course{" +
+                "cname='" + cname + '\'' +
+                ", ccode='" + ccode + '\'' +
+                ", cScore=" + cScore +
+                '}';
+    }
+}
